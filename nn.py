@@ -85,4 +85,8 @@ for j in xrange(60000):
 	# We compare the predictions of the output value in layer 2 to 
 	# the expected output data using subtraction to get the error rate.
 	l2_error = y - l2
-	
+
+        # It is also helpful to print out the average error rate at a set interval
+        # to make sure it goes down every time
+        if(j % 10000) == 0:   # Only print the error every 10000 steps, to save time and limit the amount of output.
+                print "Error: " + str(np.mean(np.abs(l2_error)))	
