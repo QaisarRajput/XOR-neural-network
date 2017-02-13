@@ -36,11 +36,31 @@ y = np.array ([	[0],
 		])
 
 # To generate random numbers, we need to seed them
-# to make them deterministic. ie give random numbers the
-# same sequence of generated numbers every time the program runs
+# to make them deterministic. ie return the same set of random numbers
+# each time the program runs.
+# This is useful for debugging.
 np.random.seed(1)
 
+# Create synapse matrices
+# Synapses are the connections between each neuron in one layer to 
+# every neuron in the next layer.
+'''
+The weights are intialized to random values.
+Since this example has 3 layers: Input, Hidden and Output. It would require 2 synapses 
 
+syn0 are the weights between the input layer and the hidden layer.  
+It is a 3x4 matrix because there are two input weights plus a bias term (=3) and 
+four nodes in the hidden layer (=4). 
+
+syn1 are the weights between the hidden layer and the output layer. 
+It is a 4x1 matrix because there are 4 nodes in the hidden layer and one output. 
+
+Note that there is no bias term feeding the output layer in this example. 
+
+The weights are initially generated randomly because optimization tends 
+not to work well when all the weights start at the same value. 
+
+'''
 
 
 
