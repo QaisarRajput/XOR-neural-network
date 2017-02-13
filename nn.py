@@ -90,3 +90,15 @@ for j in xrange(60000):
         # to make sure it goes down every time
         if(j % 10000) == 0:   # Only print the error every 10000 steps, to save time and limit the amount of output.
                 print "Error: " + str(np.mean(np.abs(l2_error)))	
+	
+	# Back propagation of errors using the chain rule.
+	'''
+	Multiply the error rate by the result of our sigmoid function.
+	The function is used to get the derivative of our output predictions from 
+	layer two.
+	We store this result in delta which is used to minimize error rate of the prediction
+	when we update our synapses every iteration.
+	Next, we want to see how much layer one contributed to the error in layer two.
+	This is acheived using backpropagation. 
+	'''
+
