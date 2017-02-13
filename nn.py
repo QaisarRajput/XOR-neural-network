@@ -12,7 +12,7 @@ A sigmoid function is in the form 1 / ( 1 + e ^ (-x) ), where x is the input.
 
 '''
 def nonlin(x, derivative = False):
-	if (derivative == true):
+	if (derivative == True):
 		return ( x * ( x -1 )) # called in backpropagation step
 	
 	return (1 / (1 + np.exp(-x)))
@@ -66,7 +66,7 @@ syn1 = 2 * np.random.random((4, 1)) - 1 # 4x1 matrix of weights (4 nodes x 1 out
  
 # Training step.
 # We use a for-loop to iterate through the training code to optimise the network for the given data set
-for j in xrange(60000):
+for j in range(60000):
 	# Calculates forward through the network
 	'''
 	First, we create the first layer. ie Input Layer
@@ -88,8 +88,9 @@ for j in xrange(60000):
 
         # It is also helpful to print out the average error rate at a set interval
         # to make sure it goes down every time
-        if(j % 10000) == 0:   # Only print the error every 10000 steps, to save time and limit the amount of output.
-                print "Error: " + str(np.mean(np.abs(l2_error)))	
+	if(j % 10000) == 0:
+		print ("Error: " + str(np.mean(np.abs(l2_error))))
+		# Only print the error every 10000 steps, to save time and limit the amount of output.
 	
 	
 	# Multiply the error rate by the result of our sigmoid function.
@@ -110,7 +111,7 @@ for j in xrange(60000):
 	# to reduce the error rate with every iteration
 	# This algorithm is called gradient descent
 	syn1 += l1.T.dot(l2_delta)
-	syn2 += l0.T.dot(l1_delta)
+	syn0 += l0.T.dot(l1_delta)
 
-print "Output after training"
-print l2
+print ("Output after training: ")
+print (l2)
