@@ -64,8 +64,25 @@ not to work well when all the weights start at the same value.
 syn0 = 2 * np.random.random((3, 4)) - 1 # 3x4 matrix of weights ((2 inputs + 1 bias) x 4 nodes in the hidden layer)
 syn1 = 2 * np.random.random((4, 1)) - 1 # 4x1 matrix of weights (4 nodes x 1 output)
  
+# Training step.
+# We use a for-loop to iterate through the training code to optimise the network for the given data set
+for j in xrange(60000):
+	# Calculates forward through the network
+	'''
+	First, we create the first layer. ie Input Layer
+	The prediction step involves performing matrix multiplication
+	between each layer and its synapse.
+	Next, we run the sigmoid function on all the values in the matrix
+	to create the next layer. The next layer contains a prediction of 
+	the output data.
+	Repeat the same process to get the next layer, which is a more refined prediction.
 
-
- 
-
-
+	'''
+	l0 = X
+	l1 = nonlin(np.dot(l0, syn0))
+	l2 = nonlin(np.dot(l1, syn1))
+	
+	# We compare the predictions of the output value in layer 2 to 
+	# the expected output data using subtraction to get the error rate.
+	l2_error = y - l2
+	
