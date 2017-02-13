@@ -61,7 +61,9 @@ The weights are initially generated randomly because optimization tends
 not to work well when all the weights start at the same value. 
 
 '''
-
+syn0 = 2 * np.random.random((3, 4)) - 1 # 3x4 matrix of weights ((2 inputs + 1 bias) x 4 nodes in the hidden layer)
+syn1 = 2 * np.random.random((4, 1)) - 1 # 4x1 matrix of weights (4 nodes x 1 output)
+ 
 
 
  
