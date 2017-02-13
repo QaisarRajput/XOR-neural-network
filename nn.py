@@ -111,3 +111,6 @@ for j in xrange(60000):
 	# This algorithm is called gradient descent
 	syn1 += l1.T.dot(l2_delta)
 	syn2 += l0.T.dot(l1_delta)
+
+print "Output after training"
+print l2
