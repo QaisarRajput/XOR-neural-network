@@ -17,6 +17,23 @@ def nonlin(x, derivative = False):
 	
 	return (1 / (1 + np.exp(-x)))
 		
+# Initialize the input data set as a matrix
+# Each row is a different training example
+X = np.array([	[0, 0, 1],
+		[0, 1, 1],
+		[1, 0, 1],
+		[1, 1, 1]
+		])
+
+# Each column represents a different neuron
+y = np.array ([	[0],
+		[1],
+		[1],
+		[0]
+		])
+
+
+
 
  
 
