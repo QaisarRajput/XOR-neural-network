@@ -13,7 +13,7 @@ A sigmoid function is in the form 1 / ( 1 + e ^ (-x) ), where x is the input.
 '''
 def nonlin(x, derivative = False):
 	if (derivative == true):
-		return ( x * ( x -1 ))
+		return ( x * ( x -1 )) # called in backpropagation step
 	
 	return (1 / (1 + np.exp(-x)))
 		
@@ -105,4 +105,9 @@ for j in xrange(60000):
 	l2_delta = l2_error * nonlin(l2, derivative = True)
 	l1_error = l2_delta.dot(syn1.T)
 	l1_delta = l1_error * nonlin(l1, derivative = True)
-
+	
+	# Using the deltas, we can use them to update the synapse rates to
+	# to reduce the error rate with every iteration
+	# This algorithm is called gradient descent
+	syn1 += l1.T.dot(l2_delta)
+	syn2 += l0.T.dot(l1_delta)
