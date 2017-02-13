@@ -19,18 +19,22 @@ def nonlin(x, derivative = False):
 		
 # Initialize the input data set as a matrix
 # Each row is a different training example
+# Each column is a different neuron
+# The third column represents the bias term and is not part
+# of the input
 X = np.array([	[0, 0, 1],
 		[0, 1, 1],
 		[1, 0, 1],
 		[1, 1, 1]
 		])
 
-# Each column represents a different neuron
+# Intialize the output data set as a matrix
 y = np.array ([	[0],
 		[1],
 		[1],
 		[0]
 		])
+
 
 
 
