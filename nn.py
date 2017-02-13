@@ -35,6 +35,11 @@ y = np.array ([	[0],
 		[0]
 		])
 
+# To generate random numbers, we need to seed them
+# to make them deterministic. ie give random numbers the
+# same sequence of generated numbers every time the program runs
+np.random.seed(1)
+
 
 
 
